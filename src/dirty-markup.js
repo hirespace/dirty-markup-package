@@ -16,7 +16,7 @@ var defaultDirtymarkupOptions = {
     theme: 'dark',
     'page-type': 'page',
     'brace-style': 'collapse',
-    indent: 'none',
+    indent: 'auto',
     'indent-size': 4,
     'print-margin': 80,
     mode: 'html',
