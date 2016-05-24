@@ -10,7 +10,7 @@ Callback: The successful api callback with a `data` parameter.
 
 Returns: An object with `status` and `code` properties.
 
-```
+```js
 var dirtymarkup = require('dirty-markup')
 var options = {
     code: '<div>Some markup</div>'
