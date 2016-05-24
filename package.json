@@ -1,0 +1,27 @@
+{
+  "name": "dirty-markup",
+  "version": "1.0.0",
+  "description": "A node wrapper around dirtymarkup.com",
+  "main": "lib/dirtymarkup.js",
+  "scripts": {
+    "compile": "babel --presets es2015 -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hirespace/dirty-markup-package.git"
+  },
+  "author": "Thomas Owers <thomas@hirespace.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hirespace/dirty-markup-package/issues"
+  },
+  "homepage": "https://github.com/hirespace/dirty-markup-package#readme",
+  "dependencies": {
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
