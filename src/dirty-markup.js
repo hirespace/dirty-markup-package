@@ -34,7 +34,9 @@ function getEncodedData(data) {
 function sendRequest(dirtymarkupOptions, requestOptions, callback) {
     var req = http.request(requestOptions, function(res) {
         res.setEncoding('utf8');
-        res.on('data', body => callback(JSON.parse(body)));
+        var data = '';
+        res.on('data', body => data += body);
+        res.on('end', () => callback(JSON.parse(data)))
     });
     req.on('error', e => {
         throw e;
