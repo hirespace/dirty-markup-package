@@ -27,6 +27,6 @@ dirtymarkup(options, function(data) {
 
 `indent-size`: Optional, defaults to 4. Options are `'tabs'`, `2`, `4` or `8`.
 
-'allow-proprietary-attributes': Optional, no default. Set to 1 to allow.
+`allow-proprietary-attributes`: Optional, no default. Set to `1` to allow.
 
-'mode': Optional, defaults to `html`. Options include `html` or 'css'.
+`mode`: Optional, defaults to `html`. Options include `html` or 'css'.
