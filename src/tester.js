@@ -1,4 +1,4 @@
-import dirtymarkup from './dirtymarkup';
+import dirtymarkup from './dirty-markup';
 
 var options = {
     code: "<a>Muahaahjdgssldjfjsbdfd</a>"
