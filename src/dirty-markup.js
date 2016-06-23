@@ -1,9 +1,9 @@
-var http = require('http');
+var https = require('https');
 var _ = require('lodash');
 
 var defaultRequestOptions = {
     hostname: 'www.dirtymarkup.com',
-    port: 80,
+    port: 443,
     path: '/src/ajax/dirty.ajax.php',
     method: 'POST',
     headers: {
@@ -32,7 +32,7 @@ function getEncodedData(data) {
 }
 
 function sendRequest(dirtymarkupOptions, requestOptions, callback) {
-    var req = http.request(requestOptions, function(res) {
+    var req = https.request(requestOptions, function(res) {
         res.setEncoding('utf8');
         var data = '';
         res.on('data', body => data += body);
