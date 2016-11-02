@@ -2,9 +2,9 @@ var https = require('https');
 var _ = require('lodash');
 
 var defaultRequestOptions = {
-    hostname: 'www.dirtymarkup.com',
+    hostname: 'dirtymarkup.com',
     port: 443,
-    path: '/src/ajax/dirty.ajax.php',
+    path: '/api/html',
     method: 'POST',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -36,7 +36,12 @@ function sendRequest(dirtymarkupOptions, requestOptions, callback) {
         res.setEncoding('utf8');
         var data = '';
         res.on('data', body => data += body);
-        res.on('end', () => callback(JSON.parse(data)))
+        res.on('end', () => {
+            var dataJson = JSON.parse(data);
+            dataJson['code'] = dataJson['clean'];
+            delete dataJson['clean'];
+            callback(dataJson)
+        })
     });
     req.on('error', e => {
         throw e;
@@ -52,7 +57,14 @@ export default function(options, callback) {
         options = false;
     }
 
+    var rOptions = defaultRequestOptions;
+
+    if (options.mode) {
+        var endpoint = '/api/' + options.mode;
+        rOptions = _.merge(defaultRequestOptions, { path: endpoint });
+    }
+
     var dmOptions = options ? _.merge(defaultDirtymarkupOptions, options) : defaultDirtymarkupOptions;
-    sendRequest(dmOptions, defaultRequestOptions, callback);
+    sendRequest(dmOptions, rOptions, callback);
 }
 
