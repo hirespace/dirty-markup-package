@@ -2,9 +2,9 @@ var https = require('https');
 var _ = require('lodash');
 
 var defaultRequestOptions = {
-    hostname: 'dirtymarkup.com',
+    hostname: 'www.10bestdesign.com',
     port: 443,
-    path: '/api/html',
+    path: '/dirtymarkup/api/html',
     method: 'POST',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
